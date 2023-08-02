@@ -11,6 +11,16 @@ pipeline {
                   checkout scm                  
              }
          }
+          stage ('JDK_11') {
+             tools {
+               jdk 'java'
+          }
+             steps{
+               sh '''
+               java -version
+               '''
+          }
+          }
          stage('Build') {
              steps {                  
                   sh './gradlew clean build'
