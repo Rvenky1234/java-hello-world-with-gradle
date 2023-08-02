@@ -23,7 +23,7 @@ pipeline {
           }
          stage('Build') {
              steps {                  
-                  sh "gradlew clean assembleRelease"
+                  sh "./gradlew build"
              }              
          }
      }
