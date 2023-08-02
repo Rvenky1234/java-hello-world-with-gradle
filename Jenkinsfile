@@ -22,6 +22,10 @@ pipeline {
           }
           }
          stage('Build') {
+         tools {
+           jdk 'java'
+           gradle 'Gradle'
+  }
              steps {                  
                   sh "./gradlew build"
              }              
